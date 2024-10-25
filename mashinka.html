@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Машинка</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      margin: 0;
+    }
+
+    .car {
+      width: 200px;
+      height: 100px;
+      background-color: #000000;
+      position: relative;
+      margin: 50px auto;
+      border-radius: 5px;
+      animation: drive 2s linear infinite;
+
+    }
+
+    .car__wheel {
+      width: 50px;
+      height: 50px;
+      background-color: #363434;
+      border-radius: 50%;
+      position: absolute;
+      top: 69px;
+    }
+
+    .car__wheel_left {
+      left: 7px;
+      animation: 1s  infinite linear rotations;
+    }
+
+    .car__wheel_right {
+      right: 9px;
+      animation: 1s  infinite linear rotations;
+    }
+
+    .car__window {
+      width: 100px;
+      height: 50px;
+      background-color: #1a9cb3;
+      position: absolute;
+      top: 16px;
+      left: 50px;
+      
+    }
+    @keyframes rotations{
+        from{
+            transform:  rotate(odeg); scale:(1);
+        }
+        to{
+            transform: rotate(360deg); scale:(2);
+        }
+    }
+    
+@keyframes drive{
+        0%{
+            transform: translateX(0);
+        }
+        50%{
+            transform: translateX(300px);
+        }
+        100%{
+            transform: translateX(0);
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="car">
+    <div class="car__wheel car__wheel_left"></div>
+    <div class="car__wheel car__wheel_right"></div>
+    <div class="car__window"></div>
+  </div>
+</body>
+</html>
